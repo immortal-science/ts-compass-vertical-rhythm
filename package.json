@@ -1,45 +1,47 @@
 {
-  "name": "compass-vertical-rhythm",
+  "name": "ts-compass-vertical-rhythm",
+  "version": "0.0.0-semantically-released",
   "description": "A port-in-progress of the Compass vertical rhythm library",
-  "version": "1.4.6",
   "author": "Kyle Mathews <mathews.kyle@gmail.com>",
-  "bugs": {
-    "url": "https://github.com/KyleAMathews/vertical-rhythm/issues"
-  },
-  "homepage": "https://github.com/KyleAMathews/vertical-rhythm",
   "keywords": [
     "sass",
     "compass",
-    "vertical-rhythm",
-    "css",
-    "typography"
+    "typography",
+    "styles",
+    "typescript",
+    "web-components"
+  ],
+  "main": "dist/index.js",
+  "ts:main": "src/index.ts",
+  "typings": "src/index.ts",
+  "files": [
+    "dist/**/*.js",
+    "src/**/*.ts"
   ],
   "license": "MIT",
-  "source": "src/index.js",
-  "main": "dist/index.js",
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/KyleAMathews/vertical-rhythm.git"
-  },
   "scripts": {
-    "test": "mocha test/index.js",
-    "test-watch": "mocha --watch test/index.js",
-    "build": "microbundle",
-    "publish-patch": "microbundle && npm version patch && npm publish",
-    "format": "prettier --write src/index.js"
+    "build": "npx tsc -p .",
+    "prepublish": "yarn build",
+    "test": "npx jest --detectOpenHandles",
+    "test-coveralls": "npx jest --detectOpenHandles --coverage && cat ./coverage/lcov.info | coveralls",
+    "travis-deploy-once": "travis-deploy-once",
+    "semantic-release": "semantic-release"
   },
   "devDependencies": {
-    "chai": "^1.10.0",
-    "microbundle": "^0.4.4",
-    "mocha": "^2.1.0",
-    "mocha-unfunk-reporter": "^0.4.0",
-    "pre-commit": "^1.0.5",
-    "prettier": "^1.12.1",
-    "underscore": "^1.8.2"
+    "@types/jest": "^24.0.11",
+    "@types/node": "^11.13.5",
+    "coveralls": "^3.0.3",
+    "cz-conventional-changelog": "2.1.0",
+    "jest": "^24.7.1",
+    "semantic-release": "^15.13.12",
+    "ts-jest": "^24.0.2"
   },
   "dependencies": {
-    "convert-css-length": "^1.0.1",
-    "object-assign": "^4.1.0",
-    "parse-unit": "^1.0.1"
+    "typescript": "^3.4.4"
+  },
+  "config": {
+    "commitizen": {
+      "path": "./node_modules/cz-conventional-changelog"
+    }
   }
 }
