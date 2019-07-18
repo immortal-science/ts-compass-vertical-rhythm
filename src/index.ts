@@ -56,3 +56,6 @@ export class VerticalRhythm {
     public rhythm = (value: number) =>
         renderCSSLength( rhythm(this.options)(value) )
 }
+
+export * from './types';
+export * from './utils/cssLength';
