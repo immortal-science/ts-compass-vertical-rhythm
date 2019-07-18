@@ -5,6 +5,7 @@ describe('cssLength template tag', () => {
         expect(cssLength`${12}px`).toEqual({ value: 12, unit: 'px' });
         expect(cssLength`-42em`).toEqual({ value: -42, unit: 'em' });
         expect(cssLength`-1.6666em`).toEqual({ value: -1.6666, unit: 'em' });
+        expect(cssLength`-20ex`).toEqual({ value: -20, unit: 'ex' });
     });
 
     it('should perform runtime validation', () => {

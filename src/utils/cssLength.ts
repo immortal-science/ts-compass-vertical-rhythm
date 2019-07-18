@@ -17,11 +17,11 @@ const assembeString = (literals: TemplateStringsArray, ...placeholders: Array<st
  * Parses CSS length notation1
  * @returns {CSSLenght} { value: 12, unit: 'px' }
  */
-export function cssLength(literals: TemplateStringsArray, ...placeholders: Array<string | number>): CSSLenght {
+export function cssLength(literals: TemplateStringsArray, ...placeholders: Array<string | number>): CSSLenght<CSSLengthUnit> {
     const str = assembeString(literals, ...placeholders);
-    const validationRegX = /^(-?[\d\.]+)(px|rem|em)$/g;
+    const validationRegX = /^(-?[\d\.]+)(px|rem|em|ex)$/g;
 
-    if (str.match(validationRegX).length === 0) {
+    if (!str.match(validationRegX)) {
         throw new Error('Invalid CSS length notation: ' + str);
     }
 
@@ -30,3 +30,9 @@ export function cssLength(literals: TemplateStringsArray, ...placeholders: Array
 
     return { value, unit };
 }
+
+export const isCssLength = (obj: CSSLenght<CSSLengthUnit> | number): obj is CSSLenght<CSSLengthUnit> =>
+    typeof obj === 'object' && obj.unit && obj.value && typeof obj.value === 'number';
+
+export const renderCSSLength = ({ value, unit }: CSSLenght<CSSLengthUnit>, numberOfDigits: number = 5): string =>
+    value.toFixed(numberOfDigits) + unit;

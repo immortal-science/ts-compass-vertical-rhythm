@@ -34,7 +34,8 @@
     "cz-conventional-changelog": "2.1.0",
     "jest": "^24.7.1",
     "semantic-release": "^15.13.12",
-    "ts-jest": "^24.0.2"
+    "ts-jest": "^24.0.2",
+    "tslib": "^1.10.0"
   },
   "dependencies": {
     "typescript": "^3.4.4"

@@ -9,17 +9,21 @@ export type BorderStyle =
     'outset' |
     'none' |
     'hidden';
-export type CSSLengthUnit = 'rem' | 'em' | 'px';
-export type CSSLenght<T = CSSLengthUnit> = {
+export type CSSLengthUnit = 'rem' | 'em' | 'px' | 'ex';
+export type CSSLenght<T extends CSSLengthUnit> = {
     value: number,
     unit: T
 };
 export type RhythmConfig = {
-    baseFontSize: CSSLenght,
-    baseLineHeight: number | CSSLenght,
+    baseFontSize: CSSLenght<CSSLengthUnit>,
+    baseLineHeight: number | CSSLenght<CSSLengthUnit>,
     rhythmUnit: CSSLengthUnit,
-    defaultRhythmBorderWidth: CSSLenght<'px'>,
-    defaultRhythmBorderStyle: BorderStyle,
-    roundToNearestHalfLine: true,
-    minLinePadding: CSSLenght,
+};
+
+export type ProcessingConfig = RhythmConfig & {
+    baseLineHeightInPx: CSSLenght<CSSLengthUnit>,
+    defaultRhythmBorderWidth?: CSSLenght<'px'>,
+    defaultRhythmBorderStyle?: BorderStyle,
+    roundToNearestHalfLine?: true,
+    minLinePadding?: CSSLenght<CSSLengthUnit>,
 };
