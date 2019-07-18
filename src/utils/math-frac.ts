@@ -1,5 +1,5 @@
 /**
- * TBasically Math.frac()
+ * Basically Math.frac()
  * Alternative to less accurate hacks:
  * ```ts
  * const fracNum = (num: number) => num % 1;
