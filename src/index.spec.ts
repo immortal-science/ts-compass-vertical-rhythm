@@ -25,9 +25,9 @@ describe('Rhythm', () => {
         });
         const rhythm = vrEM.rhythm;
 
-        expect(rhythm(1)).toEqual('1.25000em');
-        expect(rhythm(0.5)).toEqual('0.62500em');
-        expect(rhythm(0.25)).toEqual('0.31250em');
+        expect(rhythm(1)).toEqual('1.25em');
+        expect(rhythm(0.5)).toEqual('0.625em');
+        expect(rhythm(0.25)).toEqual('0.3125em');
     });
 
     it('should calculate rhythm for px', () => {
@@ -38,9 +38,9 @@ describe('Rhythm', () => {
         });
         const rhythm = vrEM.rhythm;
 
-        expect(rhythm(1)).toEqual('30.00000px');
-        expect(rhythm(0.5)).toEqual('15.00000px');
-        expect(rhythm(0.25)).toEqual('7.00000px');
+        expect(rhythm(1)).toEqual('30px');
+        expect(rhythm(0.5)).toEqual('15px');
+        expect(rhythm(0.25)).toEqual('7px');
     });
 
     it('should calculate rhythm if lineHeight is set in px', () => {
@@ -51,8 +51,8 @@ describe('Rhythm', () => {
         });
         const rhythm = vrEM.rhythm;
 
-        expect(rhythm(1)).toEqual('30.00000px');
-        expect(rhythm(0.5)).toEqual('15.00000px');
-        expect(rhythm(0.25)).toEqual('7.00000px');
+        expect(rhythm(1)).toEqual('30px');
+        expect(rhythm(0.5)).toEqual('15px');
+        expect(rhythm(0.25)).toEqual('7px');
   });
 });

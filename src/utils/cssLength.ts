@@ -1,4 +1,5 @@
 import { CSSLengthUnit, CSSLenght } from '../types';
+import { frac } from './math-frac';
 
 const assembeString = (literals: TemplateStringsArray, ...placeholders: Array<string | number>) => {
     let result = '';
@@ -32,7 +33,16 @@ export function cssLength(literals: TemplateStringsArray, ...placeholders: Array
 }
 
 export const isCssLength = (obj: CSSLenght<CSSLengthUnit> | number): obj is CSSLenght<CSSLengthUnit> =>
-    typeof obj === 'object' && obj.unit && obj.value && typeof obj.value === 'number';
+    typeof obj === 'object'
+    && obj.unit
+    && obj.value
+    && typeof obj.value === 'number';
 
-export const renderCSSLength = ({ value, unit }: CSSLenght<CSSLengthUnit>, numberOfDigits: number = 5): string =>
-    value.toFixed(numberOfDigits) + unit;
+export const CSSLength2String = ({ value, unit }: CSSLenght<CSSLengthUnit>, numberOfDigits: number = 5): string => {
+    const fracString = frac(value).toString();
+
+    if (fracString.length > numberOfDigits + 2) {
+        return value.toFixed(numberOfDigits) + unit;
+    }
+    return value + unit;
+}

@@ -1,5 +1,5 @@
 import { convertCSSLength } from './utils/convertCssLength';
-import { cssLength as cssl, isCssLength, renderCSSLength } from './utils/cssLength';
+import { cssLength as cssl, isCssLength, CSSLength2String } from './utils/cssLength';
 import { RhythmConfig, CSSLenght, CSSLengthUnit, ProcessingConfig } from './types';
 
 const rhythm = (options: ProcessingConfig) => {
@@ -54,7 +54,7 @@ export class VerticalRhythm {
     }
 
     public rhythm = (value: number) =>
-        renderCSSLength( rhythm(this.options)(value) )
+        CSSLength2String( rhythm(this.options)(value) )
 }
 
 export * from './types';
