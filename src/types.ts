@@ -9,7 +9,7 @@ export type BorderStyle =
     'outset' |
     'none' |
     'hidden';
-export type CSSLengthUnit = 'rem' | 'em' | 'px' | 'ex';
+export type CSSLengthUnit = 'rem' | 'em' | 'px' | 'ex' | '%S';
 export type CSSLenght<T extends CSSLengthUnit> = {
     value: number,
     unit: T
@@ -27,3 +27,8 @@ export type ProcessingConfig = RhythmConfig & {
     roundToNearestHalfLine?: true,
     minLinePadding?: CSSLenght<CSSLengthUnit>,
 };
+
+export interface EstablishedBaseLine {
+    fontSize: CSSLenght<CSSLengthUnit>;
+    lineHeight: number | CSSLenght<CSSLengthUnit>;
+}

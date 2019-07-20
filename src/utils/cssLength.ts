@@ -20,7 +20,7 @@ const assembeString = (literals: TemplateStringsArray, ...placeholders: Array<st
  */
 export function cssLength(literals: TemplateStringsArray, ...placeholders: Array<string | number>): CSSLenght<CSSLengthUnit> {
     const str = assembeString(literals, ...placeholders);
-    const validationRegX = /^(-?[\d\.]+)(px|rem|em|ex)$/g;
+    const validationRegX = /^(-?[\d\.]+)(px|rem|em|ex|\%)$/g;
 
     if (!str.match(validationRegX)) {
         throw new Error('Invalid CSS length notation: ' + str);
@@ -45,4 +45,4 @@ export const CSSLength2String = ({ value, unit }: CSSLenght<CSSLengthUnit>, numb
         return value.toFixed(numberOfDigits) + unit;
     }
     return value + unit;
-}
+};
