@@ -1,3 +1,4 @@
+/* tslint:disable no-console */
 import { frac } from './math-frac';
 import { performance } from 'perf_hooks';
 
