@@ -1,6 +1,6 @@
 import { linesForFontSize } from './linesForFontSize';
-import { calculateOptions } from './utils/calcOptions';
-import { cssLength as cssl } from './utils/cssLength';
+import { calculateOptions } from '../utils/calcOptions';
+import { cssLength as cssl } from '../utils/cssLength';
 import { CSSLenght, CSSLengthUnit } from 'types';
 
 describe('linesForFontSize', () => {

@@ -10,7 +10,7 @@ export type BorderStyle =
     'none' |
     'hidden';
 export type CSSLengthUnit = 'rem' | 'em' | 'px' | 'ex' | '%';
-export type CSSLenght<T extends CSSLengthUnit> = {
+export type CSSLenght<T = CSSLengthUnit> = {
     value: number,
     unit: T
 };

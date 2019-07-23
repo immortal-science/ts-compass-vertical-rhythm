@@ -1,4 +1,4 @@
-import { ProcessingConfig, EstablishedBaseLine, CSSLengthUnit } from './types';
+import { ProcessingConfig, EstablishedBaseLine, CSSLengthUnit } from '../types';
 
 type EstablishBAseLineConfig = Pick<ProcessingConfig, 'baseFontSize' | 'baseLineHeight'>;
 

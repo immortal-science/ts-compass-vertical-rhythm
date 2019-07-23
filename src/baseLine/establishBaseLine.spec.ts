@@ -1,12 +1,7 @@
 import { establishBaseline } from './establishBaseLine';
-import { cssLength as cssl, isCssLength } from './utils/cssLength';
+import { cssLength as cssl, isCssLength } from '../utils/cssLength';
 
 describe('establishBaseline', () => {
-    // const vrREM = verticalRhythm({
-    //     baseFontSize: '24px'
-    //     baseLineHeight: 1.25
-    //     rhythmUnit: 'rem'
-    // });
     const estB = () => establishBaseline({ baseFontSize: cssl`24px`, baseLineHeight: 1.25 });
 
     it('should return an object', () => {

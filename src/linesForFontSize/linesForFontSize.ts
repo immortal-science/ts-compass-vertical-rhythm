@@ -1,5 +1,5 @@
-import { CSSLenght, CSSLengthUnit, ProcessingConfig } from './types';
-import { convertCSSLength } from './utils/convertCssLength';
+import { CSSLenght, CSSLengthUnit, ProcessingConfig } from '../types';
+import { convertCSSLength } from '../utils/convertCssLength';
 
 export const linesForFontSize = (fontSize: CSSLenght<CSSLengthUnit>, options: ProcessingConfig): number => {
     let lines: number;

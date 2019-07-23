@@ -2,7 +2,7 @@ import { CSSLength2String } from './utils/cssLength';
 import { RhythmConfig, ProcessingConfig, CSSLenght, CSSLengthUnit } from './types';
 import { calculateOptions } from 'utils/calcOptions';
 import { rhythm } from './rhythm';
-import { establishBaseline } from './establishBaseLine';
+import { establishBaseline } from './baseLine';
 import { linesForFontSize } from './linesForFontSize';
 
 export class VerticalRhythm {

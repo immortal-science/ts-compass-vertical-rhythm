@@ -1,6 +1,6 @@
 import { rhythm as r } from './rhythm';
-import { cssLength as cssl } from './utils/cssLength';
-import { calculateOptions } from './utils/calcOptions';
+import { cssLength as cssl } from '../utils/cssLength';
+import { calculateOptions } from '../utils/calcOptions';
 
 describe('Rhythm', () => {
     it('should calculate rhythm for rem', () => {

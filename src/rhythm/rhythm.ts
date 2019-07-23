@@ -1,5 +1,5 @@
-import { ProcessingConfig, CSSLenght, CSSLengthUnit } from './types';
-import { convertCSSLength } from './utils/convertCssLength';
+import { ProcessingConfig, CSSLenght, CSSLengthUnit } from '../types';
+import { convertCSSLength } from '../utils/convertCssLength';
 
 export const rhythm = (options: ProcessingConfig) => {
     const convert = convertCSSLength(options.baseFontSize);
