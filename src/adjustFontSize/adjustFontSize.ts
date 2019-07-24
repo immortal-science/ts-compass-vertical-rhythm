@@ -22,12 +22,9 @@ export const adjustFontSizeTo = (options: ProcessingConfig) =>
         lines: number | 'auto' = 'auto',
         fromSize: CSSLenght<CSSLengthUnit> = options.baseFontSize
     ) => {
-        const targetSize = accountForPercentSize(toSize, options.baseFontSize);
+        const targetSize = accountForPercentSize(toSize, fromSize);
         const convert = convertCSSLength(options.baseFontSize);
         const r = rhythm(options);
-
-        console.log(targetSize)
-
         const fromSizePx = convert(fromSize, 'px');
         const resultSize = convert(targetSize, 'px', fromSizePx);
 
@@ -36,7 +33,7 @@ export const adjustFontSizeTo = (options: ProcessingConfig) =>
         }
 
         return {
-            fontSize: convert(resultSize, options.rhythmUnit, fromSizePx),
+            fontSize: convert(resultSize, options.rhythmUnit, fromSizePx, fromSizePx),
             lineHeight: r(lines, fromSizePx),
         };
     };

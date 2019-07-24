@@ -3,7 +3,7 @@ import { calculateOptions } from '../utils/calcOptions';
 import { cssLength as cssl } from '../utils/cssLength';
 import { rhythm } from '../rhythm';
 
-describe.only('adjustFontSizeTo', () => {
+describe('adjustFontSizeTo', () => {
     const options = calculateOptions({
         baseFontSize: cssl`21px`,
         baseLineHeight: 4 / 3,
@@ -75,10 +75,10 @@ describe.only('adjustFontSizeTo', () => {
         expect(result.lineHeight).toBeDefined();
     });
 
-    it.only('should work with em and fromSize', () => {
+    it('should work with em and fromSize', () => {
         const result = adj(cssl`42px`, 3, cssl`10.5px`);
 
-        expect(result.fontSize).toEqual(cssl`4em`);
-        expect(result.lineHeight).toEqual(cssl`8em`);
+        expect(result.fontSize).toEqual(cssl`2rem`);
+        expect(result.lineHeight).toEqual(cssl`4rem`);
     });
 });
