@@ -4,6 +4,7 @@ import { calculateOptions } from 'utils/calcOptions';
 import { rhythm } from './rhythm';
 import { establishBaseline } from './baseLine';
 import { linesForFontSize } from './linesForFontSize';
+import { adjustFontSizeTo } from './adjustFontSize';
 
 export class VerticalRhythm {
     private options: ProcessingConfig;
@@ -20,6 +21,9 @@ export class VerticalRhythm {
 
     public linesForFontSize = (fontSize: CSSLenght<CSSLengthUnit>) =>
         linesForFontSize(fontSize, this.options)
+
+    public adjustFontSizeTo = (toSize: CSSLenght<CSSLengthUnit>, lines?: number | 'auto', fromSize?: CSSLenght<CSSLengthUnit>) =>
+        adjustFontSizeTo(this.options)(toSize, lines, fromSize)
 }
 
 export * from './types';
